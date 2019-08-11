@@ -1,0 +1,52 @@
+{% extends "indextensorflow/layout.html" %}
+{% load bootstrap3 %}
+{% block content %}
+
+<div id="solution" class="container">
+<div class="row">
+<div class="col-md-12">
+
+<h1>{{ quiz.title }}</h1>
+
+{% if quiz.image_1 %}
+    <img src="{{ quiz.image_1.url }}" style"width=:100px;"/>
+{% endif %}
+{% if quiz.image_2 %}
+    <img src="{{ quiz.image_2.url }}" style"width=:100px;"/>
+{% endif %}
+{% if quiz.image_3 %}
+    <img src="{{ quiz.image_3.url }}" style"width=:100px;"/>
+{% endif %}
+
+{{ quiz.contents|linebreaks }}
+
+<hr />
+
+<a href="{% url "quiz:quiz_list" %}">목록</a>
+<a href="{% url "quiz:quiz_edit" quiz.id %}">수정</a>
+
+<div id="disqus_thread"></div>
+</div>
+</div>
+</div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://kmleai.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+{% endblock %}

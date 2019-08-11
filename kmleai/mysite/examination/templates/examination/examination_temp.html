@@ -1,0 +1,193 @@
+{% extends "indextensorflow/layout.html" %}
+
+{% block content %}
+<br>
+<br>
+<!-- Services Section -->
+<section id="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+<h1>진단</h1>
+<select id="myselect" onchange="change(this)">
+    <option value="0">진단할 병명을 선택하세요.</option>
+    <option value="1">급성 바이러스 감염</option>
+    <option value="2">만성 바이러스 감염</option>
+    <option value="3">알코올성 간질환</option>
+    <option value="4">폐렴</option>
+    <option value="5">대사성 알칼리즘</option>
+    <option value="6">대사성 산증</option>
+</select>
+<div id="select_1" style="display:none;">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            <input type="hidden" name="count" value="13" />
+            <tr><td>총빌리루빈</td><td><input type="text" name="" /></td></tr>
+            <tr><td>AST</td><td><input type="text" name="" /></td></tr>
+            <tr><td>ALT</td><td><input type="text" name="" /></td></tr>
+            <tr><td>IgM_anti_HAV</td><td><input type="text" name="" /></td></tr>
+            <tr><td>IgG_anti_HAV</td><td><input type="text" name="" /></td></tr>
+            <tr><td>HBsAg</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td>IgM_anti_HBc</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td>IgG_anti_HBc</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td>HBeAg</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td>HBV_DNA</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td>Anti_HBs</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td>Anti_HCV</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td>HCV_RNA</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td colspan="2"><input type="submit" value="Submit"></td></tr>
+        </table>
+    </form>
+</div>
+<div id="select_2" style="display:none;">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            <input type="hidden" name="count" value="16" />
+            <tr><td>총빌리루빈</td><td><input type="text" name="" /></td></tr>
+            <tr><td>AST</td><td><input type="text" name="" /></td></tr>
+            <tr><td>ALT</td><td><input type="text" name="" /></td></tr>
+            <tr><td>알부민혈증</td><td><input type="text" name="" /></td></tr>
+            <tr><td>프로트롬빈시간</td><td><input type="text" name="" /></td></tr>
+            <tr><td>IgM_anti_HAV</td><td><input type="text" name="" /></td></tr>
+            <tr><td>IgG_anti_HAV</td><td><input type="text" name="" /></td></tr>
+            <tr><td>HBsAg</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td>HBeAg</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td>Anti_HBe</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td>IgM_anti_HBc</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td>IgG_anti_HBc</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td>HBV_DNA</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td>Anti_HBs</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td>Anti_HCV</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td>HCV_RNA</td><td><input type="checkbox" name="" /></td></tr>
+            <tr><td colspan="2"><input type="submit" value="Submit"></td></tr>
+        </table>
+    </form>
+</div>
+<div id="select_3" style="display:none;">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            <input type="hidden" name="count" value="5" />
+            <tr><td>총빌리루빈</td><td><input type="text" name="" /></td></tr>
+            <tr><td>AST</td><td><input type="text" name="" /></td></tr>
+            <tr><td>ALT</td><td><input type="text" name="" /></td></tr>
+            <tr><td>GGT</td><td><input type="text" name="" /></td></tr>
+            <tr><td>프로트롬빈시간</td><td><input type="text" name="" /></td></tr>
+            <tr><td colspan="2"><input type="submit" value="Submit"></td></tr>
+        </table>
+    </form>
+</div>
+<div id="select_4" style="display:none;">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            <tr><td>X-ray 이미지를 삽입하여 주세요</td><td>{{ form.as_table }}</td></tr>
+            <tr><td colspan="2"><input type="submit" value="Submit"></td></tr>
+        </table>
+    </form>
+</div>
+<div id="select_5" style="display:none;">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            <input type="hidden" name="count" value="9" />
+            <tr><td>PH</td><td><input type="text" name="" /></td></tr>
+            <tr><td>PaCO2</td><td><input type="text" name="" /></td></tr>
+            <tr><td>PaO2</td><td><input type="text" name="" /></td></tr>
+            <tr><td>혈중HCO3마이너스</td><td><input type="text" name="" /></td></tr>
+            <tr><td>혈중K플러스</td><td><input type="text" name="" /></td></tr>
+            <tr><td>혈중Cl마이너스</td><td><input type="text" name="" /></td></tr>
+            <tr><td>소변Na플러스</td><td><input type="text" name="" /></td></tr>
+            <tr><td>소변K플러스</td><td><input type="text" name="" /></td></tr>
+            <tr><td>소변Cl마이너스</td><td><input type="text" name="" /></td></tr>
+            <tr><td colspan="2"><input type="submit" value="Submit"></td></tr>
+        </table>
+    </form>
+</div>
+<div id="select_6" style="display:none;">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            <input type="hidden" name="count" value="12" />
+            <tr><td>PH</td><td><input type="text" name="" /></td></tr>
+            <tr><td>PaCO2</td><td><input type="text" name="" /></td></tr>
+            <tr><td>PaO2</td><td><input type="text" name="" /></td></tr>
+            <tr><td>혈중HCO3마이너스</td><td><input type="text" name="" /></td></tr>
+            <tr><td>혈중K플러스</td><td><input type="text" name="" /></td></tr>
+            <tr><td>혈중Cl마이너스</td><td><input type="text" name="" /></td></tr>
+            <tr><td>소변Na플러스</td><td><input type="text" name="" /></td></tr>
+            <tr><td>소변K플러스</td><td><input type="text" name="" /></td></tr>
+            <tr><td>소변Cl마이너스</td><td><input type="text" name="" /></td></tr>
+            <tr><td>소변Ca</td><td><input type="text" name="" /></td></tr>
+            <tr><td>소변Cr</td><td><input type="text" name="" /></td></tr>
+            <tr><td>혈압</td><td><input type="text" name="" /></td></tr>
+            <tr><td colspan="2"><input type="submit" value="Submit"></td></tr>
+        </table>
+    </form>
+</div>
+<p><strong style="color:red;">이미지 분석은 폐렴에서만 작동합니다.</strong></p>
+
+<!-- <div id="selectedform"></div>
+<form action="" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<table>
+    {{ form.as_table }}
+</table>
+<input type="submit">
+이미지 분석은 폐렴에서만 작동합니다.
+</form>
+-->
+</div>
+</div>
+</div>
+</section> 
+<script>
+function change(obj){
+    if (obj.value == 1) {
+        document.getElementById("select_1").style.display = "";
+        document.getElementById("select_2").style.display = "none";
+        document.getElementById("select_3").style.display = "none";
+        document.getElementById("select_4").style.display = "none";
+        document.getElementById("select_5").style.display = "none";
+        document.getElementById("select_6").style.display = "none";
+    } else if (obj.value == 2) {
+        document.getElementById("select_1").style.display = "none";
+        document.getElementById("select_2").style.display = "";
+        document.getElementById("select_3").style.display = "none";
+        document.getElementById("select_4").style.display = "none";
+        document.getElementById("select_5").style.display = "none";
+        document.getElementById("select_6").style.display = "none";
+    } else if (obj.value == 3) {
+        document.getElementById("select_1").style.display = "none";
+        document.getElementById("select_2").style.display = "none";
+        document.getElementById("select_3").style.display = "";
+        document.getElementById("select_4").style.display = "none";
+        document.getElementById("select_5").style.display = "none";
+        document.getElementById("select_6").style.display = "none";
+    } else if (obj.value == 4) {
+        document.getElementById("select_1").style.display = "none";
+        document.getElementById("select_2").style.display = "none";
+        document.getElementById("select_3").style.display = "none";
+        document.getElementById("select_4").style.display = "";
+        document.getElementById("select_5").style.display = "none";
+        document.getElementById("select_6").style.display = "none";
+    } else if (obj.value == 5) {
+        document.getElementById("select_1").style.display = "none";
+        document.getElementById("select_2").style.display = "none";
+        document.getElementById("select_3").style.display = "none";
+        document.getElementById("select_4").style.display = "none";
+        document.getElementById("select_5").style.display = "";
+        document.getElementById("select_6").style.display = "none";
+    } else {
+        document.getElementById("select_1").style.display = "none";
+        document.getElementById("select_2").style.display = "none";
+        document.getElementById("select_3").style.display = "none";
+        document.getElementById("select_4").style.display = "none";
+        document.getElementById("select_5").style.display = "none";
+        document.getElementById("select_6").style.display = "";
+    }
+  }
+</script>
+{% endblock %}

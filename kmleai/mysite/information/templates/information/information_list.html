@@ -1,0 +1,72 @@
+{% extends "indextensorflow/layout.html" %}
+{% load bootstrap3 %}
+{% block content %}
+<div id="information" class="container">
+<div class="row">
+<div class="col-md-12">
+<h1>의료관련 정보교환 게시판</h1>
+
+<form action="" method="get" class="form">
+    <input type="text" name="srchTitle" value="{{ titles }}" />
+    <input class="btn btn-primary btn-sm" type="submit" value="검색" />
+</form>
+<br>
+<button class="btn btn-primary" onclick="location.href='{% url "information:information_new" %}'">새로운 게시물 작성</button>
+<br>
+<br>
+<br>
+<table class="table">
+<tr>
+    <th>제목</th>
+    <th>글쓴이</th>
+	<th>등록일시</th>
+	<th>조회수</th>
+	<th>댓글수</th>
+</tr>
+{% for information in information_list %}
+    <tr>
+    <td>
+        <a href="{% url "information:information_detail" information.id %}" style="color:black;">
+            {{ information.title }}
+        </a>
+    </td>
+    <td>{{ information.author }}</td>
+	<td>{{ information.created_at }}</td>
+    <td>-</td>
+	<td>-</td>
+    </tr>
+{% endfor %}
+</table>
+<br>	
+<table class="table">
+<tr>
+<td></td>
+<td></td>
+<td></td>
+        <td>
+            {% if information_list.has_previous %}
+			<a href="?page={{ information_list.previous_page_number }}"><strong style="color:blue;">previous</strong></a>
+            {% else %}
+            	previous
+        	{% endif %}
+        </td>
+        <td>
+        	Page {{ information_list.number }} of {{ information_list.paginator.num_pages }}.
+        </td>
+		<td>
+        	{% if information_list.has_next %}
+			<a href="?page={{ information_list.next_page_number }}"><strong style="color:blue;">next</strong></a>
+            {% else %}
+            	next
+        	{% endif %}
+        </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>   
+</div>
+</div>
+</div>
+
+{% endblock %}

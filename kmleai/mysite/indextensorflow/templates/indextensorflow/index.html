@@ -1,0 +1,105 @@
+{% extends "indextensorflow/layout.html" %}
+
+{% block content %}
+    <!-- Services Section! -->
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Services</h2>
+                    <h3 class="section-subheading text-muted">KMLEAI는 비영리로 운영되는 의사국가고시 풀이 공유 사이트입니다.</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <a href='http://www.paullab.co.kr/'><h4 class="service-heading"><span style="color:black">AI를 이용한 진단서비스</span></h4></a>
+                    <p class="text-muted">딥러닝(TensorFlow)을 이용한 진단서비스를 제공합니다. 서비스는 문제풀이 용도로만 사용하세요.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-users fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <a href='http://www.paullab.co.kr/'><h4 class="service-heading"><span style="color:black">문제풀이 공유</span></h4></a>
+                    <p class="text-muted">의사국가고시 문제와 풀이를 공유할 수 있는 서비스와 의료 관련 유익한 정보를 공유할 수 있는 서비스를 제공합니다.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-retweet fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <a href='http://www.paullab.co.kr/'><h4 class="service-heading"><span style="color:black">서비스 업데이트</span></h4></a>
+                    <p class="text-muted">서비스는 지속적으로 업데이트하여 다양한 진단을 서비스할 계획입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team Section -->
+    <section id="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Our Amazing Team</h2>
+                    <h3 class="section-subheading text-muted">프로젝트 어벤져스!</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        {% load staticfiles %}
+                        <img src="{% static 'team/1.jpg' %}" class="img-responsive img-circle" alt="Hojun Lee">
+                        <h4>Hojun Lee</h4>
+                        <p class="text-muted">PM, TensorFlow</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/hojun.lee.521"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="{% static 'team/2.jpg' %}" class="img-responsive img-circle" alt="Taehyeon Lee">
+                        <h4>Taehyeon Lee</h4>
+                        <p class="text-muted">Developer, Django</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/TH.Jake.Lee"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="{% static 'team/3.jpg' %}" class="img-responsive img-circle" alt="Deokju Kim">
+                        <h4>Deokju Kim</h4>
+                        <p class="text-muted">Field of medicine</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/profile.php?id=100005311386399"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p class="large text-muted">팀 프로젝트에 공헌해주실 분은 아래 연락처로 연락주세요.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

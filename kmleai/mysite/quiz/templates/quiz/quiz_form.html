@@ -1,0 +1,19 @@
+{% extends "indextensorflow/layout.html" %}
+{% load bootstrap3 %}
+{% block content %}
+<br>
+<br>
+<div id="solution" class="container">
+<div class="row">
+<div class="col-md-12">
+<form aciton="" method="post" enctype="multipart/form-data" class="form form-group">
+    {% csrf_token %}
+    <table class="table">
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="저장" />
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

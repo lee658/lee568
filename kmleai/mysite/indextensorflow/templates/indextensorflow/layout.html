@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>KMLEAI</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://paullab.github.io/my-first-blog/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="https://paullab.github.io/my-first-blog/css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://paullab.github.io/my-first-blog/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">KMLEAI</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a onclick="return servicescroll();" href="http://www.kmleai.co.kr/#services">Service</a>
+                    </li>
+                    <li>
+                        <a onclick="return teamscroll();" href="http://www.kmleai.co.kr/#team">Team</a>
+                    </li>
+                    <li>
+                        <a onclick="examinationscroll();" href="http://www.kmleai.co.kr/examination/">AI Diagnosis</a>
+                    </li>
+                    <li>
+                        <a onclick="solution();" href="http://www.kmleai.co.kr/quiz/">Solution</a>
+                    </li>
+                    <li>
+                        <a onclick="information();" href="http://www.kmleai.co.kr/information/">Interchange</a>
+                    </li>
+                    <li>
+                        <a onclick="halloffame();" href="http://www.kmleai.co.kr/halloffame/">Hall of Fame</a>
+                    </li>
+                    
+                    {% if not user.is_authenticated %}
+                    <li><a class="page-scroll" href="{% url "login" %}">LogIn</a></li>
+                    <li><a class="page-scroll" href="{% url "signup" %}">SignUp</a></li>
+                    {% else %}
+                    <li><a class="page-scroll" href="{% url "profile" %}">Profile</a></li>
+                    <li><a class="page-scroll" href="{% url "logout" %}?next=/">LogOut</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Welcome To 'KMLEAI' Service!</div>
+                <div class="intro-heading">의사국가고시 정보를 공유합니다.</div>
+                <a href="#services" class="page-scroll btn btn-xl">진단서비스 바로가기</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; KMLEAI 2017</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#"></a>
+                        </li>
+                        <li><a href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- jQuery -->
+    <script src="https://paullab.github.io/my-first-blog/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://paullab.github.io/my-first-blog/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://paullab.github.io/my-first-blog/jquery.easing.min.js"></script>
+    <script src="https://paullab.github.io/my-first-blog/js/classie.js"></script>
+    <script src="https://paullab.github.io/my-first-blog/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="https://paullab.github.io/my-first-blog/js/jqBootstrapValidation.js"></script>
+    <script src="https://paullab.github.io/my-first-blog/js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="https://paullab.github.io/my-first-blog/js/agency.js"></script>
+    
+    <!-- scroll -->
+    <script>
+        /*
+    function servicescroll(){
+        setTimeout(function act(){
+        var offset = $("#services").offset();
+        $('html, body').animate({scrollTop : offset.top}, 400);    
+        }, 300);
+        return false;
+    }
+    function teamscroll(){
+    setTimeout(function(){
+        var offset = $("#team").offset();
+        $('html, body').animate({scrollTop : offset.top}, 400);
+        return false;
+    }, 300)
+    }
+    setTimeout(function examinationscroll(){
+        var offset = $("#examination").offset();
+        $('html, body').animate({scrollTop : offset.top}, 400);
+        return false;
+    }, 300)*/
+    function teamscroll(element) { 
+            var offset = $("#team").offset();
+            $('html, body').animate({scrollTop : offset.top}, 300);
+            return false;
+      window.location = element.href;
+    }
+        
+    function servicescroll(element) { 
+        var offset = $("#services").offset();
+        $('html, body').animate({scrollTop : offset.top}, 300);
+        return false;
+      window.location = element.href;
+    }
+    
+    setTimeout(function examinationscroll(){
+        var offset = $("#examination").offset();
+        $('html, body').animate({scrollTop : offset.top}, 300);
+        return false;
+    }, 300)
+        
+    setTimeout(function solution(){
+        var offset = $("#solution").offset();
+        $('html, body').animate({scrollTop : offset.top}, 300);
+        return false;
+    }, 300)
+        
+    setTimeout(function information(){
+        var offset = $("#information").offset();
+        $('html, body').animate({scrollTop : offset.top}, 300);
+        return false;
+    }, 300)
+	
+	setTimeout(function halloffame(){
+        var offset = $("#halloffame").offset();
+        $('html, body').animate({scrollTop : offset.top}, 300);
+        return false;
+    }, 300)
+    </script>
+
+
+</body>
+
+</html>

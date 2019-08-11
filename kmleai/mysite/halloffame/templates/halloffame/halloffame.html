@@ -1,0 +1,127 @@
+{% extends "indextensorflow/layout.html" %}
+
+{% block content %}
+<section>
+<div id="halloffame" class="container">
+<div class="row">
+<div class="col-md-12">
+<h1>명예의 전당</h1>
+<h3>연구 활성화를 위해 우수 공여자를 공개하는 「명예의 전당」 운영</h3>
+    <br>
+	<select onchange="changeHonorList(this.value);">
+		<option value="2017">2017년</option>
+		<option value="2018">2018년</option>
+		<option value="2019">2019년</option>
+		<option value="2020">2020년</option>
+		<option value="2021">2021년</option>
+	</select>
+	<br>
+	<br>
+	<br>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Hall of fame</th>
+          <th>Name</th>
+          <th>Algorithm Points</th>
+          <th>Data Points</th>
+          <th>Donate Points</th>
+          <th>Total Grade</th>
+          <th>Introduce</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center">
+            <span class="fa-stack fa-1x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-university fa-stack-1x fa-inverse"></i>
+            </span>
+          </td>
+          <td>Smith</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </td>
+        </tr>
+        <tr>
+          <td class="text-center">
+            <span class="fa-stack fa-1x">
+                        <i class="fa fa-circle fa-stack-2x text-muted"></i>
+                        <i class="fa fa-university fa-stack-1x fa-inverse"></i>
+            </span>
+          </td>
+          <td>Jackson</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
+        </tr>
+        <tr>
+          <td class="text-center">
+            <span class="fa-stack fa-1x">
+                        <i class="fa fa-circle fa-stack-2x text-warning"></i>
+                        <i class="fa fa-university fa-stack-1x fa-inverse"></i>
+            </span>
+          </td>
+          <td>Smith</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </td>
+        </tr>
+        <tr>
+          <td class="text-center">4</td>
+          <td>Jackson</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
+        </tr>
+        <tr>
+          <td class="text-center">5</td>
+          <td>Smith</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </td>
+        </tr>
+        <tr>
+          <td class="text-center">6</td>
+          <td>Jackson</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
+        </tr>
+        <tr>
+          <td class="text-center">7</td>
+          <td>Smith</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </td>
+        </tr>
+        <tr>
+          <td class="text-center">8</td>
+          <td>Jackson</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>50</td>
+          <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,116 @@
+{% extends "indextensorflow/layout.html" %}
+
+{% block content %}
+<br>
+<br>
+<!-- Services Section -->
+<section id="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+<h1>진단</h1>
+<select id="myselect" onchange="change(this)">
+    <option value="0">진단할 병명을 선택하세요.</option>
+    <option value="1">급성 바이러스 감염</option>
+    <option value="2">만성 바이러스 감염</option>
+    <option value="3">알코올성 간질환</option>
+    <option value="4">폐렴</option>
+    <option value="5">대사성 알칼리즘</option>
+    <option value="6">대사성 산증</option>
+</select>
+<div id="selectedform"></div>
+<form action="" method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<table>
+    {{ form.as_table }}
+</table>
+<input type="submit">
+이미지 분석은 폐렴에서만 작동합니다.
+</form>
+</div>
+</div>
+</div>
+</section>
+<script>
+function change(obj){
+		if (obj.value == 1)
+		{
+      var 총빌리루빈 = 0
+      var one_AST = 0
+      var one_ALT = 0
+      var one_IgM_anti_HAV = 0
+      var one_IgG_anti_HAV = 0
+      var one_HBsAg = true
+      var one_IgM_anti_HBc = true
+      var one_IgG_anti_HBc = true
+      var one_HBeAg = true
+      var one_HBV_DNA = true
+      var one_Anti_HBs = true
+      var one_Anti_HCV = true
+      var one_HCV_RNA = true
+      document.getElementById("selectedform").innerHTML = '<form> 총빌리루빈 : <input type="text"><br> AST : <input type="text"><br> ALT : <input type="text"><br> IgM_anti_HAV : <input type="text"><br> IgG_anti_HAV : <input type="text"><br> HBsAg : <input type="checkbox"><br> IgM_anti_HBc : <input type="checkbox"><br> IgG_anti_HBc : <input type="checkbox"><br> HBeAg : <input type="checkbox"><br> HBV_DNA : <input type="checkbox"><br> Anti_HBs : <input type="checkbox"><br> Anti_HCV : <input type="checkbox"><br> HCV_RNA : <input type="checkbox"><br>    <br><input type="submit" value="Submit"></form>';
+		}
+    else if (obj.value == 2)
+    {
+      var 총빌리루빈 = 0
+      var one_AST = 0
+      var one_ALT = 0
+      var one_IgM_anti_HAV = 0
+      var one_IgG_anti_HAV = 0
+      var one_HBsAg = true
+      var one_IgM_anti_HBc = true
+      var one_IgG_anti_HBc = true
+      var one_HBeAg = true
+      var one_HBV_DNA = true
+      var one_Anti_HBs = true
+      var one_Anti_HCV = true
+      var one_HCV_RNA = true
+      document.getElementById("selectedform").innerHTML = '<form> 총빌리루빈 : <input type="text"><br> AST : <input type="text"><br> ALT : <input type="text"><br> 알부민혈증 : <input type="text"><br> 프로트롬빈시간 : <input type="text"><br> IgM_anti_HAV : <input type="text"><br> IgG_anti_HAV : <input type="text"><br> HBsAg : <input type="checkbox"><br> IgM_anti_HBc : <input type="checkbox"><br> IgG_anti_HBc : <input type="checkbox"><br> HBeAg : <input type="checkbox"><br> Anti_HBe : <input type="checkbox"><br> HBV_DNA : <input type="checkbox"><br> Anti_HBs : <input type="checkbox"><br> Anti_HCV : <input type="checkbox"><br> HCV_RNA : <input type="checkbox"><br> <br><input type="submit" value="Submit"></form>';
+		}
+    else if (obj.value == 3)
+    {
+      var 총빌리루빈 = 0
+      var one_AST = 0
+      var one_ALT = 0
+      var one_GGT = 0
+      var 프로트롬빈시간 = 0
+      document.getElementById("selectedform").innerHTML = '<form> 총빌리루빈 : <input type="text"><br> AST : <input type="text"><br> ALT : <input type="text"><br> GGT : <input type="text"><br> 프로트롬빈시간 : <input type="text"><br> <br><input type="submit" value="Submit"></form>';
+    }
+    else if (obj.value == 4)
+    {
+    document.getElementById("selectedform").innerHTML = '<p>X-ray 이미지를 삽입하여 주세요.</p>'
+    }
+    else if (obj.value == 5)
+    {
+      var PH = 0
+      var PaCO2 = 0
+      var PaO2 = 0
+      var 혈중HCO3마이너스 = 0
+      var 혈중Na플러스 = 0
+      var 혈중K플러스 = 0
+      var 혈중Cl마이너스 = 0
+      var 소변Na플러스 = 0
+      var 소변K플러스 = 0
+      var 소변Cl마이너스 = 0
+      document.getElementById("selectedform").innerHTML = '<form> PH : <input type="text"><br> PaCO2 : <input type="text"><br> PaO2 : <input type="text"><br> 혈중HCO3마이너스 : <input type="text"><br> 혈중K플러스 : <input type="text"><br> 혈중Cl마이너스 : <input type="text"><br> 소변Na플러스 : <input type="text"><br> 소변K플러스 : <input type="text"><br> 소변Cl마이너스 : <input type="text"><br> <br><input type="submit" value="Submit"></form>';
+    }
+		else
+		{
+      var PH = 0
+      var PaCO2 = 0
+      var PaO2 = 0
+      var 혈중HCO3마이너스 = 0
+      var 혈중Na플러스 = 0
+      var 혈중K플러스 = 0
+      var 혈중Cl마이너스 = 0
+      var 소변Na플러스 = 0
+      var 소변K플러스 = 0
+      var 소변Cl마이너스 = 0
+      var 소변Ca = 0
+      var 소변Cr = 0
+      var 혈압 = 0
+      document.getElementById("selectedform").innerHTML = '<form> PH : <input type="text"><br> PaCO2 : <input type="text"><br> PaO2 : <input type="text"><br> 혈중HCO3마이너스 : <input type="text"><br> 혈중K플러스 : <input type="text"><br> 혈중Cl마이너스 : <input type="text"><br> 소변Na플러스 : <input type="text"><br> 소변K플러스 : <input type="text"><br> 소변Cl마이너스 : <input type="text"><br> 소변Ca : <input type="text"><br> 소변Cr : <input type="text"><br> 혈압 : <input type="text"><br><br><input type="submit" value="Submit"></form>';
+		}
+  }
+</script>
+{% endblock %}
